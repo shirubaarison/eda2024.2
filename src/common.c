@@ -11,10 +11,12 @@
  * - criar_no: Cria um novo nó com valor fornecido.
  * - inserir_no: Insere um valor na tabela de dispersão.
  * - printar_tabela: Imprime o conteúdo da tabela de dispersão.
+ * - contar_digitos: Retorna a quantidade de dígitos de um valor.
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 #include "../include/common.h"
 
@@ -74,3 +76,5 @@ void printar_tabela(Hash *hash, int tam)
     printf("/\n");
   } 
 }
+
+int contar_digitos(ULL valor) { return (int)log10(valor) + 1; }

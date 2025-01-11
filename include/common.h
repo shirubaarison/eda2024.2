@@ -58,4 +58,11 @@ void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int, int
 */
 void printar_tabela(Hash *hash, int tam);
 
+/**
+ * @brief   Contas os dígitos de um valor.
+ * @param valor   Valor que será contado os dígitos.
+ * @return Quantos dígitos tem.
+*/
+int contar_digitos(ULL valor);
+
 #endif
