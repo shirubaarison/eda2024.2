@@ -1,12 +1,14 @@
 #ifndef DOBRA_H
 #define DOBRA_H
 
+#include "common.h"
+
 /**
  * @brief   Inverte um número.
  * @param   valor   valor.
  * @return  Valor invertido: Ex: 23, retorna 32.
  */
-unsigned int inverter(ULL valor);
+ULL inverter(ULL valor);
 
 /**
  * @brief   Soma algarismos de dois números, sem considerar "sobe 1".
@@ -14,7 +16,7 @@ unsigned int inverter(ULL valor);
  * @param   valor2   valor2.
  * @return  Soma dos algarismos. Ex: 34 + 29 = 53.
  */
-unsigned int somar_algarismos(int val1, int val2);
+ULL somar_algarismos(ULL val1, ULL val2);
 
 /**
  * @brief   Faz o método da dobra do Jayme.
