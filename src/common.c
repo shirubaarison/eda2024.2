@@ -1,3 +1,17 @@
+
+/**
+ * @file common.c
+ * @brief Implementação das funções para a tabela de dispersão (hash table).
+ *
+ * Este arquivo contém a implementação das funções necessárias para criar,
+ * manipular e testar uma tabela de dispersão.
+ *
+ * Funções Implementadas:
+ * - criar_tabela: Cria uma nova tabela de dispersão.
+ * - criar_no: Cria um novo nó com valor fornecido.
+ * - inserir_no: Insere um valor na tabela de dispersão.
+ * - printar_tabela: Imprime o conteúdo da tabela de dispersão.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

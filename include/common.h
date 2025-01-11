@@ -47,7 +47,7 @@ No *criar_no(int valor);
  * @param tam         Tamanho da tabela hash.
  * @param funcao_hash Função que será aplicada para calcular a posição dentro da tabela hash.
 */
-void inserir_no(Hash *hash, int valor, int tam, unsigned int (*funcao_hash)(int, int, int));
+void inserir_no(Hash *hash, int valor, int tam, unsigned int (*funcao_hash)(int val, int tam, int acc));
 
 /**
  * @brief   Imprime a tabela na tela.
