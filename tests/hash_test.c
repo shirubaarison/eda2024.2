@@ -12,7 +12,7 @@
  * @param   tam         Tamanho.
  * @param   hash_func   Função que será usada para calcular o hash do valor.
  */
-void f_test(int tam, unsigned int (*hash_func)(int, int, int)) 
+void f_test(int tam, ULL (*hash_func)(ULL, int, int)) 
 {  
   Hash *tabela = criar_tabela();
   srand(time(NULL));
@@ -29,7 +29,7 @@ void f_test(int tam, unsigned int (*hash_func)(int, int, int))
  * @param   func      Função que será executada para realização da tarefa.
  * @param   hash_func Função que será utilizada para a inserção na tabela de disperção
 */
-void teste(int tam, void (*func)(int, unsigned int (*)(int, int, int)), unsigned int (*hash_func)(int, int, int)) 
+void teste(int tam, void (*func)(int, ULL (*)(ULL, int, int)), ULL (*hash_func)(ULL, int, int)) 
 {
   clock_t inicio, fim;
   double tempo;
