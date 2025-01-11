@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include <time.h>
 
-#include "../include/common.h"
+#include "../../include/common.h"
 
 enum Tipo {ou, e, ouEx};
 

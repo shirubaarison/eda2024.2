@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "../include/common.h"
+#include "../../include/common.h"
 
 unsigned int hash_div(int valor, int tam, int _)
 {

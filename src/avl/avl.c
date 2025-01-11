@@ -2,25 +2,25 @@
 #include <stdlib.h>
 
 typedef struct no {
-  int valor;
+  int chave;
   struct no *esq, *dir;
   int bal;
 } No;
 
-
-No *inicializar() 
+No *criar_no(int chave) 
 {
-  No *raiz = malloc(sizeof(No));
+  No *no = (No*)malloc(sizeof(No));
 
-  if (raiz == NULL) {
+  if (no == NULL) {
     printf("Erro ao alocar árvore ;(");
   }
-  raiz->dir = raiz->esq = NULL;
+  no->chave = no->bal = 0;
+  no->dir = no->esq = NULL;
   
-  return raiz;
+  return no;
 }
 
-int altura(No *arvore) 
+int bal(No *arvore) 
 {
   if (arvore == NULL)
     return 0;

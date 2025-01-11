@@ -1,4 +1,5 @@
 .vscode
 hash
+!hash/
 hash_test
 teste

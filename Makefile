@@ -2,20 +2,21 @@ CC = gcc
 CFLAGS = -Wall
 COMMON = src/common.c
 
+HASH_DIR = src/hash
 SRC_DIR = src
 
 TARGET = hash
 TEST = hash_test
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(TARGET) $(TEST)
 
 dobra:
-	$(CC) src/dobra.c playground/hash_dobra.c ${CFLAGS} $(COMMON) -o ${TARGET}
+	$(CC) ${HASH_DIR}/dobra.c playground/hash_dobra.c ${CFLAGS} $(COMMON) -o ${TARGET}
 
 div:
-	$(CC) src/div.c playground/hash_div.c ${CFLAGS} $(COMMON) -o ${TARGET}
+	$(CC) ${HASH_DIR}/div.c playground/hash_div.c ${CFLAGS} $(COMMON) -o ${TARGET}
 
 test: 
-	$(CC) tests/hash_test.c $(SRC_DIR)/dobra.c $(SRC_DIR)/div.c ${CFLAGS} $(COMMON) -o ${TEST}
+	$(CC) tests/hash_test.c ${HASH_DIR}/dobra.c ${HASH_DIR}/div.c ${CFLAGS} $(COMMON) -o ${TEST}
 	./${TEST}

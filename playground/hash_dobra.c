@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
   for (int i = 0; i < tam; i++) {
     valor = rand() % TEST_MAX_CHAVES;
     inserir_no(tabela, valor, tam, hash_dobra);
-    // printf("%lld foi inserido na tabela.\n", valor);
+    printf("%lld foi inserido na tabela.\n", valor);
   }
 
   printar_tabela(tabela, tam);
