@@ -7,13 +7,15 @@
 #define TEST_MAX_TAM 200000        // Tamanho máximo de testes
 #define TEST_MAX_CHAVES 2000000000 // chaves entre 0 e 2000000000
 
+#define ULL unsigned long long     // macro para não ficar digitando unsigned long long toda hora
+
 /**
  * @brief Representa um nó.
  *
  * Essa struct têm o valor do nó e o ponteiro para o próximo
 */
 typedef struct no {
-  int valor;
+  ULL valor;
   struct no *prox;
 } No;
 
@@ -38,7 +40,7 @@ Hash *criar_tabela();
  * 
  * @return Endereço de memória pro nó criado.
 */
-No *criar_no(int valor);
+No *criar_no(ULL valor);
 
 /**
  * @brief   Insere o nó na tabela hash.
@@ -47,7 +49,7 @@ No *criar_no(int valor);
  * @param tam         Tamanho da tabela hash.
  * @param funcao_hash Função que será aplicada para calcular a posição dentro da tabela hash.
 */
-void inserir_no(Hash *hash, int valor, int tam, unsigned int (*funcao_hash)(int val, int tam, int acc));
+void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int, int));
 
 /**
  * @brief   Imprime a tabela na tela.

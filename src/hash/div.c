@@ -4,7 +4,7 @@
 
 #include "../../include/common.h"
 
-unsigned int hash_div(int valor, int tam, int _)
+ULL hash_div(ULL valor, int tam, int _)
 {
   unsigned int hashed_value = valor % MOD;
   return hashed_value % tam;

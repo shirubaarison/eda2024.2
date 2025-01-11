@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
   Hash *tabela = criar_tabela();
   
   srand(time(NULL));
-  unsigned long long valor;
+  ULL valor;
   for (int i = 0; i < tam; i++) {
     valor = rand() % TEST_MAX_CHAVES;
     inserir_no(tabela, valor, tam, hash_dobra);

@@ -10,6 +10,6 @@
  * 
  * @note    O _ é necessário pois da forma como o código foi organizado, é necessário passar o terceiro argumento obrigatóriamente.
  */
-unsigned int hash_div(int valor, int tam, int _);
+ULL hash_div(ULL valor, int tam, int _);
 
 #endif

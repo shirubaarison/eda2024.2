@@ -28,7 +28,7 @@ Hash *criar_tabela() {
   return hash_table;
 }
 
-No *criar_no(int valor) 
+No *criar_no(ULL valor) 
 {
   No *novo = (No*) malloc(sizeof(No));
   if (novo == NULL) {
@@ -42,9 +42,9 @@ No *criar_no(int valor)
   return novo;
 }
 
-void inserir_no(Hash *hash, int valor, int tam, unsigned int (*funcao_hash)(int val, int tam, int acc)) 
+void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int, int)) 
 {
-  unsigned int pos = funcao_hash(valor, tam, 0);
+  ULL pos = funcao_hash(valor, tam, 0);
   No *no = hash->tabela[pos];
 
   if (no == NULL) {
@@ -68,7 +68,7 @@ void printar_tabela(Hash *hash, int tam)
 
     printf("[%d] -> ", i);
     while (aux != NULL) {
-      printf("%d -> ", aux->valor);
+      printf("%lld -> ", aux->valor);
       aux = aux->prox;
     }
     printf("/\n");

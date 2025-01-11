@@ -7,13 +7,13 @@
 enum Tipo {ou, e, ouEx};
 
 // Método da dobra
-unsigned int hash_dobra(int valor, int tam, int acc) 
+unsigned int hash_dobra(ULL valor, int tam, int acc) 
 {
  unsigned int res = 0;
  
 }
 
-void inserir_no(Hash *hash, int valor, int tam) 
+void inserir_no(Hash *hash, ULL valor, int tam) 
 {
   unsigned int pos = hash_dobra(valor, tam, 0);
   No *no = hash->tabela[pos];
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
   Hash *tabela = criar_tabela();
   
   srand(time(NULL));
-  unsigned long long valor;
+  ULL valor;
   for (int i = 0; i < tam * 2; i++) {
     valor = rand() % 2000000000;
     inserir_no(tabela, valor, tam);

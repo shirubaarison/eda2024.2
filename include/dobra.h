@@ -6,7 +6,7 @@
  * @param   valor   valor.
  * @return  Valor invertido: Ex: 23, retorna 32.
  */
-unsigned int inverter(int valor);
+unsigned int inverter(ULL valor);
 
 /**
  * @brief   Soma algarismos de dois números, sem considerar "sobe 1".
@@ -25,6 +25,6 @@ unsigned int somar_algarismos(int val1, int val2);
  * 
  * @note    Precisa do acumulador para calcular a soma de forma recursiva.
  */
-unsigned int hash_dobra(int valor, int tam, int acc);
+ULL hash_dobra(ULL valor, int tam, int acc);
 
 #endif
