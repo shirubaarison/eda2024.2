@@ -1,6 +1,10 @@
-# Trab 1 - EDA
+# Estrutura de Dados Avançadas
+
+## Trab 1
 
 Trabalho 1 da cadeira de Estrutura de Dados Avançada da UFC Campus Russas
+
+(ainda estou fazendo)
 
 ## Estrutura do Projeto
 
