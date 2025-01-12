@@ -28,3 +28,7 @@ test:
 test_dobra:
 	$(CC) tests/hash_dobra_test.c ${HASH_DIR}/dobra.c  ${TEST_DIR}/test_helper.c ${CFLAGS} $(COMMON) -o ${TEST}
 	./${TEST}
+
+test_div:
+	$(CC) tests/hash_div_test.c ${HASH_DIR}/div.c  ${TEST_DIR}/test_helper.c ${CFLAGS} $(COMMON) -o ${TEST}
+	./${TEST}
