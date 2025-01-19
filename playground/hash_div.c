@@ -22,13 +22,15 @@ int main(int argc, char *argv[])
   
   srand(time(NULL));
   int i, valor;
+  int col = 0;
   for (i = 0; i < tam; i++) {
     valor = rand() % TEST_MAX_CHAVES;
-    inserir_no(tabela, valor, tam, hash_div);
+    inserir_no(tabela, valor, tam, hash_div, &col);
     // printf("%d foi inserido na tabela.\n", valor);
   }
 
   printar_tabela(tabela, tam);
+  printf("%d colisões\n", col);
 
   return EXIT_SUCCESS;
 }

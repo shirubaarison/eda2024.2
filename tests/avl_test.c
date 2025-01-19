@@ -35,10 +35,10 @@ int main()
     }
 
     // inserir até fechar a quantidade
-    // while (qtd_nos(avls[i]) < QTD_NOS) {
-    //   chave = rand() % MAX_VALUE;
-    //   ins_AVL(chave, &avls[i], &h);
-    // }
+    while (qtd_nos(avls[i]) < QTD_NOS) {
+      chave = rand() % MAX_VALUE;
+      ins_AVL(chave, &avls[i], &h);
+    }
     
     printf("A %d° árvore possui %d nós\n", i + 1, qtd_nos(avls[i]));
 
@@ -63,6 +63,12 @@ int main()
     printf("Removendo %d nós na %d° árvore...\n", QTD_REMOCOES, i + 1);
 
     for (int j = 0; j < QTD_REMOCOES; j++) {
+      chave = rand() % MAX_VALUE;
+      remover_avl(chave, &avls[i], &h);
+    }
+
+    // remover até fechar a quantidade
+    while (qtd_nos(avls[i]) > (QTD_NOS - QTD_REMOCOES)) {
       chave = rand() % MAX_VALUE;
       remover_avl(chave, &avls[i], &h);
     }

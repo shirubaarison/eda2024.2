@@ -37,4 +37,6 @@ ULL hash_aux(ULL valor, int tam, int acc);
  */
 ULL hash_dobra(ULL valor, int tam);
 
+ULL hash_dobra_binaria(int chave, int tamanho);
+
 #endif

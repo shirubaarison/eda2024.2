@@ -24,7 +24,7 @@ mult:
 	$(CC) ${HASH_DIR}/multiplicacao.c ${CFLAGS} $(COMMON) -o ${TARGET}
 
 test: 
-	$(CC) tests/hash_test.c ${HASH_DIR}/dobra.c ${HASH_DIR}/div.c ${CFLAGS} $(COMMON) -o ${TEST}
+	$(CC) tests/hash_test.c ${HASH_DIR}/dobra.c ${HASH_DIR}/mult.c ${HASH_DIR}/div.c ${CFLAGS} $(COMMON) -o ${TEST}
 	./${TEST}
 
 test_dobra:

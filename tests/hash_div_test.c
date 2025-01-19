@@ -11,22 +11,22 @@ Resposta *teste_hash_div()
 {
   ULL resposta, esperado;
 
-  resposta = hash_div(813459, 100, 0);
+  resposta = hash_div(813459, 100);
   esperado = 17;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);
 
-  resposta = hash_div(1349149, 100, 0);
+  resposta = hash_div(1349149, 100);
   esperado = 88;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);
 
-  resposta = hash_div(1, 100, 0);
+  resposta = hash_div(1, 100);
   esperado = 1;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);
 
-  resposta = hash_div(1139481481, 300, 0);
+  resposta = hash_div(1139481481, 300);
   esperado = 93;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);

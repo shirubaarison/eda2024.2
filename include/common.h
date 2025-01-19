@@ -1,7 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#define MOD 283                    // Divisor primo escolhido para a o método da divisão
+#define MOD 3761                   // Divisor primo escolhido para a o método da divisão
 #define MAX_TAM 9999999            // Tamanho máximo da tabela (criação)
 
 #define TEST_MAX_TAM 200000        // Tamanho máximo de testes
@@ -49,7 +49,7 @@ No *criar_no(ULL valor);
  * @param tam         Tamanho da tabela hash.
  * @param funcao_hash Função que será aplicada para calcular a posição dentro da tabela hash.
 */
-void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int));
+void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int), int *colisoes);
 
 /**
  * @brief   Imprime a tabela na tela.

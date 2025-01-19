@@ -6,20 +6,22 @@
 #include "../include/common.h"
 #include "../include/dobra.h"
 #include "../include/div.h"
+#include "../include/mult.h"
 
 /**
  * @brief   Função que será testada, cria a tabela hash e insere dependendo da função que será passada;
  * @param   tam         Tamanho.
  * @param   hash_func   Função que será usada para calcular o hash do valor.
+ * @param   col         Ponteiro para contar colisões.
  */
-void f_test(int tam, ULL (*hash_func)(ULL, int, int)) 
+void f_test(int tam, ULL (*hash_func)(ULL, int), int *col) 
 {  
   Hash *tabela = criar_tabela();
   srand(time(NULL));
   ULL valor;
   for (int i = 0; i < tam; i++) {
     valor = rand() % TEST_MAX_CHAVES;
-    inserir_no(tabela, valor, tam, hash_func);
+    inserir_no(tabela, valor, tam, hash_func, col);  // Passa o ponteiro de colisões
   }
 }
 
@@ -27,16 +29,17 @@ void f_test(int tam, ULL (*hash_func)(ULL, int, int))
  * @brief   Calcula o tempo de execução de determinada função.
  * @param   tam       Tamanho do teste.
  * @param   func      Função que será executada para realização da tarefa.
- * @param   hash_func Função que será utilizada para a inserção na tabela de disperção
+ * @param   hash_func Função que será utilizada para a inserção na tabela de disperção.
+ * @param   col       Ponteiro para contar colisões.
 */
-void teste(int tam, void (*func)(int, ULL (*)(ULL, int, int)), ULL (*hash_func)(ULL, int, int)) 
+void teste(int tam, void (*func)(int, ULL (*)(ULL, int), int *), ULL (*hash_func)(ULL, int), int *col) 
 {
   clock_t inicio, fim;
   double tempo;
 
   inicio = clock();
 
-  func(tam, hash_func);
+  func(tam, hash_func, col);
 
   fim = clock();
 
@@ -47,23 +50,35 @@ void teste(int tam, void (*func)(int, ULL (*)(ULL, int, int)), ULL (*hash_func)(
 
 int main()
 { 
-  // TODO: Executar de forma paralela
-
+  int col = 0;  // Inicializa o contador de colisões
   printf("=-=-=-=-=-=-= Método da divisão =-=-=-=-=-=-=\n");
   int n = 50000;
   for (int i = 0; i < 5; i++) {
     printf("n = %d\n", n);
-    teste(n, f_test, hash_div);
+    teste(n, f_test, hash_div, &col);  // Passa ponteiro para contar colisões
     n += 50000;
   }
+  printf("Números de colisões: %d\n", col);
 
-  printf("=-=-=-=-=-=-=- Método da dobra -=-=-=-=-=-=-=\n");
+  col = 0;
+  printf("=-=-=-=-=-=-=- Método da dobra (decimal) -=-=\n");
   n = 50000;
   for (int i = 0; i < 5; i++) {
     printf("n = %d\n", n);
-    teste(n, f_test, hash_dobra);
+    teste(n, f_test, hash_dobra, &col);  // Passa ponteiro para contar colisões
     n += 50000;
   }
+  printf("Números de colisões: %d\n", col);
+
+  col = 0;
+  printf("=-=-=-=-=-=-= Método da multiplicação =-=-=\n");
+  n = 50000;
+  for (int i = 0; i < 5; i++) {
+    printf("n = %d\n", n);
+    teste(n, f_test, hash_multiplicacao, &col);  // Passa ponteiro para contar colisões
+    n += 50000;
+  }
+  printf("Números de colisões: %d\n", col);
 
   return EXIT_SUCCESS;
 }

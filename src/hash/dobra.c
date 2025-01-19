@@ -50,4 +50,13 @@ ULL hash_aux(ULL valor, int tam, int acc)
   return hash_aux(valor, tam, acc);
 }
 
+ULL hash_dobra_binaria(int chave, int tamanho) {
+    ULL hash = 0;
+    while (chave > 0) {
+        hash ^= (chave & 0xF);
+        chave >>= tamanho;
+    }
+    return hash % tamanho;
+}
+
 ULL hash_dobra(ULL valor, int tam) { return hash_aux(valor, tam, 0); }

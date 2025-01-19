@@ -70,28 +70,33 @@ Resposta *teste_hash_dobra()
 {
   ULL resposta, esperado;
 
-  resposta = hash_dobra(813459, 100, 0);
+  resposta = hash_dobra(813459, 100);
   esperado = 73;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);
 
-  resposta = hash_dobra(2135637962, 100, 0);
+  resposta = hash_dobra(2135637962, 100);
   esperado = 86;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);
 
-  resposta = hash_dobra(1912752614, 100, 0);
+  resposta = hash_dobra(1912752614, 100);
   esperado = 71;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);
 
-  resposta = hash_dobra(1912752614, 1000, 0);
+  resposta = hash_dobra(1912752614, 1000);
   esperado = 378;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);
 
-  resposta = hash_dobra(130919414012, 10000, 0);
+  resposta = hash_dobra(130919414012, 10000);
   esperado = 6702;
+  if (resposta != esperado)
+    return criar_mensagem(ERRO, esperado, resposta);
+
+  resposta = hash_dobra(279384, 100);
+  esperado = 30;
   if (resposta != esperado)
     return criar_mensagem(ERRO, esperado, resposta);
 

@@ -44,7 +44,7 @@ No *criar_no(ULL valor)
   return novo;
 }
 
-void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int)) 
+void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int), int *colisoes) 
 {
   ULL pos = funcao_hash(valor, tam);
   No *no = hash->tabela[pos];
@@ -52,6 +52,7 @@ void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int))
   if (no == NULL) {
     hash->tabela[pos] = criar_no(valor);
   } else {
+    (*colisoes)++;
     while (no) {
       if (no->prox == NULL) {
         no->prox = criar_no(valor);
