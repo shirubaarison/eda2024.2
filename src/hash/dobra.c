@@ -37,7 +37,7 @@ ULL somar_algarismos(ULL val1, ULL val2) {
 }
 
 // considera apenas tamanhos multiplos de 10.
-ULL hash_dobra(ULL valor, int tam, ULL acc) 
+ULL hash_aux(ULL valor, int tam, int acc) 
 {
   if (valor < tam) {
     return (somar_algarismos(valor, acc)) % tam;
@@ -47,5 +47,7 @@ ULL hash_dobra(ULL valor, int tam, ULL acc)
   
   valor /= tam;
   
-  return hash_dobra(valor, tam, acc);
+  return hash_aux(valor, tam, acc);
 }
+
+ULL hash_dobra(ULL valor, int tam) { return hash_aux(valor, tam, 0); }

@@ -44,9 +44,9 @@ No *criar_no(ULL valor)
   return novo;
 }
 
-void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int, int)) 
+void inserir_no(Hash *hash, ULL valor, int tam, ULL (*funcao_hash)(ULL, int)) 
 {
-  ULL pos = funcao_hash(valor, tam, 0);
+  ULL pos = funcao_hash(valor, tam);
   No *no = hash->tabela[pos];
 
   if (no == NULL) {

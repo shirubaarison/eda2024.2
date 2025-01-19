@@ -27,6 +27,14 @@ ULL somar_algarismos(ULL val1, ULL val2);
  * 
  * @note    Precisa do acumulador para calcular a soma de forma recursiva.
  */
-ULL hash_dobra(ULL valor, int tam, int acc);
+ULL hash_aux(ULL valor, int tam, int acc);
+
+/**
+ * @brief   wrapper pra chamar a função de dobra
+ * @param   valor   valor que deseja fazer o hash.
+ * @param   tam     tamanho da tabela hash.
+ * @return  Posição que deve ser inserido o valor.
+ */
+ULL hash_dobra(ULL valor, int tam);
 
 #endif
