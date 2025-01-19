@@ -3,11 +3,13 @@ CFLAGS = -Wall -lm
 COMMON = src/common.c
 
 HASH_DIR = src/hash
+AVL_DIR = src/avl
 SRC_DIR = src
 TEST_DIR = tests
 
 TARGET = hash
 TEST = hash_test
+TEST_AVL = avl_test
 
 clean:
 	rm -f $(TARGET) $(TEST)
@@ -32,3 +34,7 @@ test_dobra:
 test_div:
 	$(CC) tests/hash_div_test.c ${HASH_DIR}/div.c  ${TEST_DIR}/test_helper.c ${CFLAGS} $(COMMON) -o ${TEST}
 	./${TEST}
+
+avl-test:
+	$(CC) ${AVL_DIR}/avl.c tests/avl_test.c ${CFLAGS} $(COMMON) -o ${TEST_AVL}
+	./${TEST_AVL}
