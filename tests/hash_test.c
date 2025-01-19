@@ -7,6 +7,7 @@
 #include "../include/dobra.h"
 #include "../include/div.h"
 #include "../include/mult.h"
+#include "../include/analise.h"
 
 /**
  * @brief   Função que será testada, cria a tabela hash e insere dependendo da função que será passada;
@@ -46,39 +47,55 @@ void teste(int tam, void (*func)(int, ULL (*)(ULL, int), int *), ULL (*hash_func
   tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
   printf("Tempo de execução: %.6f segundos.\n", tempo);
+  printf("Números de colisões: %d\n", *col);
 }
 
 int main()
 { 
-  int col = 0;  // Inicializa o contador de colisões
+  int col = 0;
   printf("=-=-=-=-=-=-= Método da divisão =-=-=-=-=-=-=\n");
   int n = 50000;
   for (int i = 0; i < 5; i++) {
     printf("n = %d\n", n);
-    teste(n, f_test, hash_div, &col);  // Passa ponteiro para contar colisões
+    teste(n, f_test, hash_div, &col);
     n += 50000;
   }
-  printf("Números de colisões: %d\n", col);
-
+  
   col = 0;
   printf("=-=-=-=-=-=-=- Método da dobra (decimal) -=-=\n");
   n = 50000;
   for (int i = 0; i < 5; i++) {
     printf("n = %d\n", n);
-    teste(n, f_test, hash_dobra, &col);  // Passa ponteiro para contar colisões
+    teste(n, f_test, hash_dobra, &col);
     n += 50000;
   }
-  printf("Números de colisões: %d\n", col);
 
   col = 0;
   printf("=-=-=-=-=-=-= Método da multiplicação =-=-=\n");
   n = 50000;
   for (int i = 0; i < 5; i++) {
     printf("n = %d\n", n);
-    teste(n, f_test, hash_multiplicacao, &col);  // Passa ponteiro para contar colisões
+    teste(n, f_test, hash_multiplicacao, &col);
     n += 50000;
   }
-  printf("Números de colisões: %d\n", col);
+
+  col = 0;
+  printf("=-=-=-=-=-=-= Método da analise1 =-=-=-=-=\n");
+  n = 50000;
+  for (int i = 0; i < 5; i++) {
+    printf("n = %d\n", n);
+    teste(n, f_test, hash_analise_digitos_1, &col);
+    n += 50000;
+  }
+
+  col = 0;
+  printf("=-=-=-=-=-=-= Método da analise2 =-=-=-=-=\n");
+  n = 50000;
+  for (int i = 0; i < 5; i++) {
+    printf("n = %d\n", n);
+    teste(n, f_test, hash_analise_digitos_2, &col);
+    n += 50000;
+  }
 
   return EXIT_SUCCESS;
 }
