@@ -36,7 +36,7 @@ ULL somar_algarismos(ULL val1, ULL val2) {
   return resultado;
 }
 
-// considera apenas tamanhos multiplos de 10.
+// considera apenas tamanhos potencias de 10.
 ULL hash_aux(ULL valor, int tam, int acc) 
 {
   if (valor < tam) {
@@ -50,13 +50,13 @@ ULL hash_aux(ULL valor, int tam, int acc)
   return hash_aux(valor, tam, acc);
 }
 
-ULL hash_dobra_binaria(int chave, int tamanho) {
+ULL hash_dobra_binaria(int chave, int tam) {
     ULL hash = 0;
     while (chave > 0) {
         hash ^= (chave & 0xF);
-        chave >>= tamanho;
+        chave >>= 4;
     }
-    return hash % tamanho;
+    return hash % tam;
 }
 
 ULL hash_dobra(ULL valor, int tam) { return hash_aux(valor, tam, 0); }

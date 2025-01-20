@@ -56,42 +56,45 @@ int main()
   printf("=-=-=-=-=-=-= Método da divisão =-=-=-=-=-=-=\n");
   int n = 50000;
   for (int i = 0; i < 5; i++) {
+    col = 0;
     printf("n = %d\n", n);
     teste(n, f_test, hash_div, &col);
     n += 50000;
   }
   
-  col = 0;
   printf("=-=-=-=-=-=-=- Método da dobra (decimal) -=-=\n");
   n = 50000;
   for (int i = 0; i < 5; i++) {
+    col = 0;
     printf("n = %d\n", n);
     teste(n, f_test, hash_dobra, &col);
     n += 50000;
   }
 
-  col = 0;
   printf("=-=-=-=-=-=-= Método da multiplicação =-=-=\n");
   n = 50000;
   for (int i = 0; i < 5; i++) {
+    col = 0;
     printf("n = %d\n", n);
     teste(n, f_test, hash_multiplicacao, &col);
     n += 50000;
   }
 
-  col = 0;
+  
   printf("=-=-=-=-=-=-= Método da analise1 =-=-=-=-=\n");
   n = 50000;
   for (int i = 0; i < 5; i++) {
+    col = 0;
     printf("n = %d\n", n);
     teste(n, f_test, hash_analise_digitos_1, &col);
     n += 50000;
   }
 
-  col = 0;
+  
   printf("=-=-=-=-=-=-= Método da analise2 =-=-=-=-=\n");
   n = 50000;
   for (int i = 0; i < 5; i++) {
+    col = 0;
     printf("n = %d\n", n);
     teste(n, f_test, hash_analise_digitos_2, &col);
     n += 50000;

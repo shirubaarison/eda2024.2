@@ -1,7 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#define MOD 3761                   // Divisor primo escolhido para a o método da divisão
+#define MOD 97                    // Divisor primo escolhido para a o método da divisão
 #define MAX_TAM 9999999            // Tamanho máximo da tabela (criação)
 
 #define TEST_MAX_TAM 200000        // Tamanho máximo de testes

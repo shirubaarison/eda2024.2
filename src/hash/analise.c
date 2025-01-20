@@ -31,7 +31,7 @@ ULL hash_analise_digitos_2(ULL chave, int tam) {
     double resultado = 0;
 
     for (int i = 0; i < 10; i++) {
-        resultado += soma - media;
+        resultado += (soma - media);
     }
 
     resultado = pow(resultado, 2);
